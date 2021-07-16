@@ -2,7 +2,7 @@ class BankAccount:
     def __init__(self, balance=0, int_rate=0.02):
         self.balance = balance
         self.int_rate = int_rate
-        # self.account = BankAccount(int_rate=0.02, balance=0)
+        
 
     def deposit(self, amount):
         self.balance += amount
@@ -10,10 +10,10 @@ class BankAccount:
     def withdraw(self, amount):
         self.balance -= amount
         if self.balance <= amount:
-            print("Insufficent Funds")
+            print("Insufficient Funds")
         return self
     def display_account_info(self):
-        print(self.balance)
+        print(f"Your balance is: ", self.balance)
         return self
 
     def yield_interest(self):
@@ -43,11 +43,11 @@ class User:
         self.balance -= amount
         return self
 
-michael = User("Michael pompernickle", "pompernickle@cantgetthistowork.com")
-linda = User("Anna pompernickle", "annanickle@cantgetthistowork.com")
-Bob = User("Guido van Rossum", "guido@python.com")
-Izzy = User("Monty Python", "monty@python.com")
+michael = User("Michael Luckiest", "MichaelLuck@luckville.com")
+linda = User("Linda Luckiest", "lindaLuck@luckville.com")
+Bob = User("Bob Ross", "BRoss@paint.com")
+Izzy = User("Izzy Arts", "Izzyarts@paint.com")
 
 Izzy.make_deposit(100).make_deposit(200).make_deposit(300).get_cash(50).account_info()
 linda.make_deposit(3000).make_deposit(300).account_info()
-michael.account_info()
+michael.get_cash(10).account_info()
